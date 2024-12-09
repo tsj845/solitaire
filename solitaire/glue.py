@@ -168,11 +168,14 @@ def run() -> None:
                         "  flip -- flips the card at the current position",
                         "  flipall -- flips all cards to faceup, if anything else is added to the command, flips all cards",
                         "  force -- forces the currently selected card (and any below it) to be put at the selected location",
+                        "  pos -- toggle displaying the current position and the selected position, if any",
                         "Controls:",
                         "  use arrow keys or WASD to move, F also acts as an 'up' input",
                         "  press 'e' to put the card at the current location onto an ace stack, if possible",
                         "  press 'c' to move the card at the current location to a valid place on the playing area, if available",
                         "  press 'm', 'h', or 'return' to open the name dialog",
+                        "  press 'space' or 'o' to select a card, if a card is already selected, that card will be put at the current location if it is a valid move, if the card at the current location is the selected card, it will be unselected",
+                        "  press 'escape' to unselect the card",
                         "Name Dialog:",
                         "  by entering the display names of cards as seen in the terminal (case insensitive) into the name dialog, the cursor will be put at that position\n"
                         ]))
