@@ -49,9 +49,14 @@ keybinds: dict[str, Input] = {
     "a":Input(InputType.Motion, Motion.Left),
     "d":Input(InputType.Motion, Motion.Right),
     "w":Input(InputType.Motion, Motion.Up),
+    "f":Input(InputType.Motion, Motion.Up),
     "s":Input(InputType.Motion, Motion.Down),
     "i":Input(InputType.Cmd, "\0cmdstart"),
-    "o":Input(InputType.Cmd, "select")
+    "o":Input(InputType.Cmd, "select"),
+    "m":Input(InputType.Name, None),
+    "h":Input(InputType.Name, None),
+    "e":Input(InputType.Name, "ace"),
+    "c":Input(InputType.Name, "any")
 }
 
 @hide_after
@@ -103,6 +108,8 @@ def readInput(name: bool = False, cmd: bool = False, single: bool = False) -> In
                 cmd = True
             else:
                 return r
+        elif r.value != None:
+            return r
     show()
     buf = []
     bpos = 0

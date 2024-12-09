@@ -1,3 +1,4 @@
+from typing import Any
 from util import *
 from logic import *
 
@@ -7,6 +8,11 @@ POSCOL: str = "\x1b[48;5;8m"
 # POSCOL: str = "\x1b[48;2;100;100;100m"
 SHOWPOS: bool = False
 
+def toggleShowpos() -> None:
+    global SHOWPOS
+    SHOWPOS = not SHOWPOS
+
+# def primRend(area: PlayArea) -> None:
 def render(area: PlayArea) -> None:
     write(f"moves: {area.moves}\n")
     for i in range(4):
@@ -37,3 +43,6 @@ def render(area: PlayArea) -> None:
     if SHOWPOS:
         write(f":{area.cpos}: {POSCOL}{'' if tuple(area.selloc) == (-1,-1) else area.selloc}\x1b[0m\n")
     flush()
+# def render(area: PlayArea) -> None:
+#     cl = area.deltas.changes()
+#     area.deltas.commit()
